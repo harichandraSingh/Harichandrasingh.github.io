@@ -137,11 +137,54 @@
         margin-bottom: 15px;
       }
     }
+      /* NEPAL FLAG ANIMATION */
+    .flag-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 70px;
+      transform-origin: left center;
+      animation: realisticWave 2s ease-in-out infinite;
+    }
+
+    @keyframes realisticWave {
+      0% { transform: skewY(0deg) rotate(0deg) scale(1); }
+      25% { transform: skewY(3deg) rotate(2deg) scale(1.02); }
+      50% { transform: skewY(-3deg) rotate(-2deg) scale(1.03); }
+      75% { transform: skewY(2deg) rotate(1deg) scale(1.01); }
+      100% { transform: skewY(0deg) rotate(0deg) scale(1); }
+    }
+
+    /* ROSE BLOOM ANIMATION */
+    .rose-container {
+      position: absolute;
+      top: 15px;
+      left: 10px;
+      width: 60px;
+      transform-origin: center bottom;
+      animation: bloom 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes bloom {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      50% { transform: scale(0.85); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
   </style>
 </head>
 <body>
 
   <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Red_rose.png" class="rose-container" alt="Rose Blooming">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
     <h1>Harichandra Singh</h1>
     <p class="greeting">Welcome to my website! Thank you for visiting — Have a great day! 😊</p>
   </header>
