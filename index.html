@@ -144,7 +144,7 @@
       right: 10px;
       width: 70px;
       transform-origin: left center;
-      animation: realisticWave 2s ease-in-out infinite;
+      animation: realisticWave 3s ease-in-out infinite;
     }
 
     @keyframes realisticWave {
@@ -153,28 +153,6 @@
       50% { transform: skewY(-3deg) rotate(-2deg) scale(1.03); }
       75% { transform: skewY(2deg) rotate(1deg) scale(1.01); }
       100% { transform: skewY(0deg) rotate(0deg) scale(1); }
-    }
-
-    /* ROSE BLOOM ANIMATION */
-    .rose-container {
-      position: absolute;
-      top: 15px;
-      left: 10px;
-      width: 60px;
-      transform-origin: center bottom;
-      animation: bloom 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes bloom {
-      0% { transform: scale(0.6); opacity: 0.6; }
-      50% { transform: scale(0.85); opacity: 0.85; }
-      100% { transform: scale(1); opacity: 1; }
-    }
-
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      50% { transform: rotate(5deg); }
-      100% { transform: rotate(0deg); }
     }
 
   </style>
