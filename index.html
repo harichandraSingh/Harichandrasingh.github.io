@@ -144,7 +144,7 @@
       right: 10px;
       width: 70px;
       transform-origin: left center;
-      animation: realisticWave 3s ease-in-out infinite;
+      animation: realisticWave 2s ease-in-out infinite;
     }
 
     @keyframes realisticWave {
@@ -155,13 +155,27 @@
       100% { transform: skewY(0deg) rotate(0deg) scale(1); }
     }
 
+    
+
+    @keyframes bloom {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      50% { transform: scale(0.85); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      50% { transform: rotate(5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
   </style>
 </head>
 <body>
 
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Emoji_u1f339.svg/240px-Emoji_u1f339.svg.png" class="rose-container"" alt="Rose Blooming">
+    
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
     <h1>Harichandra Singh</h1>
     <p class="greeting">Welcome to my website! Thank you for visiting — Have a great day! 😊</p>
