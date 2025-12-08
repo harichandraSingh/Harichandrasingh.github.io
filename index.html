@@ -23,15 +23,26 @@
       color: white;
       text-align: center;
       padding: 60px 20px;
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
       font-size: 2.5rem;
     }
 
-    header p {
+    /* MOVING GREETING TEXT */
+    .greeting {
+      margin-top: 15px;
+      white-space: nowrap;
+      display: inline-block;
       font-size: 1.2rem;
-      margin-top: 10px;
+      animation: moveText 12s linear infinite;
+    }
+
+    @keyframes moveText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     nav {
@@ -132,7 +143,7 @@
 
   <header>
     <h1>Harichandra Singh</h1>
-    <p>B.Sc. (Hons.) Agriculture Graduate | Content Creator | Learn Krishi Official</p>
+    <p class="greeting">Welcome to my website! Thank you for visiting — Have a great day! 😊</p>
   </header>
 
   <nav>
@@ -161,7 +172,6 @@
     <p><strong>M.Sc.Ag (Agronomy) - Running</strong></p>
     <p><strong>B.Sc. (Hons.) in Agriculture</strong></p>
     <p><strong>I.Sc.Ag (Plant Science)</strong></p>
-    
   </section>
 
   <section id="experience">
@@ -194,21 +204,15 @@
     <h2>Contact</h2>
     <p>📧 Email: <a href="mailto:harichandrasingh222@gmail.com">harichandrasingh222@gmail.com</a></p>
     <p>📞 Phone: +977 9840213344</p>
-     <p>🏠 Address: Khaptadchhanna Rural Municipality–02, Bajhang, Nepal</p>
+    <p>🏠 Address: Khaptadchhanna Rural Municipality–02, Bajhang, Nepal</p>
+
     <div class="social-icons">
-    <a href="https://facebook.com/harishsin9h" target="_blank">
-        <i class="fab fa-facebook fa-2x"></i>
-    </a>
-    <a href="https://instagram.com/learnkrishiofficial" target="_blank">
-        <i class="fab fa-instagram fa-2x"></i>
-    </a>
-    <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank">
-        <i class="fab fa-youtube fa-2x"></i>
-    </a>
-    <a href="https://tiktok.com/@harish_singh_1" target="_blank">
-        <i class="fab fa-tiktok fa-2x"></i>
-    </a>
-</div>
+      <a href="https://facebook.com/harishsin9h" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+      <a href="https://instagram.com/learnkrishiofficial" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      <a href="https://tiktok.com/@harish_singh_1" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+    </div>
+  </section>
 
   <footer>
     © 2025 Harichandra Singh | Designed with ❤️ in Nepal
