@@ -49,6 +49,37 @@
       background-color: #1b5e20;
       text-align: center;
       padding: 10px 0;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* NEW BADGE */
+    .new-badge {
+      background: #ff1744;
+      color: white;
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 6px;
+      margin-left: 5px;
+      font-weight: bold;
+      animation: pulse 1.4s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
     }
 
     nav a {
@@ -187,6 +218,7 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <a href="#classes">Online Classes <span class="new-badge">NEW</span></a>
   </nav>
 
   <section id="about">
