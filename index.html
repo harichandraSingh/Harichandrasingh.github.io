@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <div id="nepaliDateTime" style="
+     position:absolute;
+     top:20px;
+     left:20px;
+     background:rgba(255, 255, 255, 0.8);
+     padding:6px 12px;
+     border-radius:8px;
+     font-size:0.95rem;
+     color:#1b5e20;
+     font-weight:600;">
+   Loading Nepali Time...
+</div>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harichandra (Harish) Singh | Agriculture Graduate | Official Personal Website</title>
@@ -225,6 +238,51 @@
   <footer>
     © 2025 Harichandra Singh | Designed with ❤️ in Nepal
   </footer>
+<script>
+  function getNepaliDate() {
+    const engDate = new Date();
+
+    // Nepali timezone offset (+5:45)
+    const nepTime = new Date(engDate.getTime() + ((5 * 60 + 45) * 60000));
+
+    // Nepali months
+    const nepaliMonths = [
+      "बैशाख", "जेठ", "असार", "श्रावण", "भदौ", "असोज",
+      "कार्तिक", "मंसिर", "पुष", "माघ", "फाल्गुण", "चैत्र"
+    ];
+
+    // Bikram Sambat Year Conversion (approx)
+    const bsYear = nepTime.getFullYear() + 57;
+    const bsMonth = nepTime.getMonth();
+    const bsDay = nepTime.getDate();
+
+    // Time format
+    let hours = nepTime.getHours();
+    let minutes = nepTime.getMinutes();
+    let seconds = nepTime.getSeconds();
+
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+
+    // Format leading zeros
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    // Final Nepali date time output
+    return (
+      `${bsYear} ${nepaliMonths[bsMonth]} ${bsDay} | ` +
+      `${hours}:${minutes}:${seconds} ${ampm}`
+    );
+  }
+
+  function updateNepaliDateTime() {
+    document.getElementById("nepaliDateTime").innerText = getNepaliDate();
+  }
+
+  // Update every second
+  setInterval(updateNepaliDateTime, 1000);
+  updateNepaliDateTime();
+</script>
 
 </body>
 </html>
