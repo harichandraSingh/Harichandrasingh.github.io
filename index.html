@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Harichandra Singh | Agriculture Graduate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
     body { background-color: #f8fff8; color: #222; line-height: 1.6; }
@@ -12,43 +13,50 @@
     header h1 { font-size: 2.5rem; }
 
     .greeting { margin-top: 15px; white-space: nowrap; display: inline-block; font-size: 1.2rem; animation: moveText 12s linear infinite; }
-    @keyframes moveText { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+    @keyframes moveText { 0%{transform:translateX(100%);} 100%{transform:translateX(-100%);} }
 
     nav { background-color: #1b5e20; text-align: center; padding: 10px 0; position: relative; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 500; position: relative; }
-    nav a:hover { text-decoration: underline; }
+    nav a { color:white; text-decoration:none; margin:0 15px; font-weight:500; position:relative; }
+    nav a:hover { text-decoration:underline; }
 
-    .new-badge { background: #ff1744; color: white; font-size: 0.65rem; padding: 2px 6px; border-radius: 6px; margin-left: 5px; font-weight: bold; animation: pulse 1.4s infinite; }
-    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+    .new-badge { background:#ff1744; color:white; font-size:0.65rem; padding:2px 6px; border-radius:6px; margin-left:5px; font-weight:bold; animation:pulse 1.4s infinite; }
+    @keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.2);} 100%{transform:scale(1);} }
 
-    section { max-width: 1000px; margin: 50px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-    section h2 { color: #2e7d32; margin-bottom: 15px; border-bottom: 2px solid #c8e6c9; display: inline-block; }
+    section { max-width:1000px; margin:50px auto; padding:20px; background:white; border-radius:10px; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+    section h2 { color:#2e7d32; margin-bottom:15px; border-bottom:2px solid #c8e6c9; display:inline-block; }
 
-    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
-    .about img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #2e7d32; }
-    .about p { flex: 1; font-size: 1rem; }
+    .about { display:flex; flex-wrap:wrap; align-items:center; gap:20px; }
+    .about img { width:180px; height:180px; object-fit:cover; border-radius:50%; border:4px solid #2e7d32; }
+    .about p { flex:1; font-size:1rem; }
 
-    ul { list-style: disc; padding-left: 25px; }
-    .youtube { text-align: center; margin-top: 20px; }
-    iframe { width: 100%; max-width: 560px; height: 315px; border-radius: 10px; border: none; }
+    ul { list-style:disc; padding-left:25px; }
+    .youtube { text-align:center; margin-top:20px; }
 
-    footer { background-color: #2e7d32; color: white; text-align: center; padding: 20px 0; margin-top: 40px; font-size: 0.9rem; }
+    iframe { width:100%; border:none; border-radius:10px; }
+    footer { background:#2e7d32; color:white; text-align:center; padding:20px 0; margin-top:40px; font-size:0.9rem; }
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
-      .about { flex-direction: column; text-align: center; }
-      .about img { margin-bottom: 15px; }
-    }
+    .flag-container { position:absolute; top:10px; right:10px; width:70px; animation: realisticWave 2s ease-in-out infinite; }
+    @keyframes realisticWave { 0%{transform:skewY(0) rotate(0);} 50%{transform:skewY(-3deg) rotate(-2deg);} 100%{transform:skewY(0) rotate(0);} }
 
-    .flag-container { position: absolute; top: 10px; right: 10px; width: 70px; transform-origin: left center; animation: realisticWave 2s ease-in-out infinite; }
-    @keyframes realisticWave { 0% { transform: skewY(0deg) rotate(0deg) scale(1); } 25% { transform: skewY(3deg) rotate(2deg) scale(1.02); } 50% { transform: skewY(-3deg) rotate(-2deg) scale(1.03); } 75% { transform: skewY(2deg) rotate(1deg) scale(1.01); } 100% { transform: skewY(0deg) rotate(0deg) scale(1); } }
+    /* ONLINE CLASSES SECTION */
+    #classesContainer { margin-top:40px; }
+    .class-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:20px; }
+    .class-card { background:white; border-radius:10px; padding:15px; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
+    .class-card img { width:100%; height:150px; object-fit:cover; border-radius:8px; }
+    .class-card h3 { color:#2e7d32; margin-top:10px; font-size:1.1rem; }
+    .class-card p { font-size:0.9rem; color:#555; }
+    .class-card .btn { display:inline-block; margin-top:10px; padding:8px 12px; border-radius:6px; font-size:0.9rem; font-weight:600; text-decoration:none; }
+    .btn-primary { background:#2e7d32; color:white; }
+    .btn-outline { border:1px solid #2e7d32; color:#2e7d32; background:white; }
+
+    .resources ul { margin-top:20px; }
+    .resources a { color:#1b5e20; font-weight:500; text-decoration:none; }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Nepal Flag">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container">
     <h1>Harichandra Singh</h1>
     <p class="greeting">Welcome to my website! Thank you for visiting — Have a great day! 😊</p>
   </header>
@@ -59,20 +67,14 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <a href="#classes">Online Classes <span class="new-badge">NEW</span></a>
+    <a href="#classesContainer">Online Classes <span class="new-badge">NEW</span></a>
   </nav>
-
-  <!-- Integrated Online Classes Section -->
-  <section id="classes">
-    <h2>Online Classes</h2>
-    <iframe src="classes.html" style="width:100%;height:900px;border:none;border-radius:10px;overflow:hidden;"></iframe>
-  </section>
 
   <section id="about">
     <h2>About Me</h2>
     <div class="about">
-      <img src="brp.jpg" alt="Profile Photo" />
-      <p>I am an agriculture graduate from Nepal, passionate about sustainable farming, climate-resilient agriculture, and community-based agricultural development. I also create educational content through my YouTube channel <strong>Learn Krishi Official</strong>.</p>
+      <img src="brp.jpg">
+      <p>I am an agriculture graduate passionate about sustainable farming, climate-resilient agriculture, and community-based development. I also create educational content on my YouTube channel <strong>Learn Krishi Official</strong>.</p>
     </div>
   </section>
 
@@ -86,49 +88,97 @@
   <section id="experience">
     <h2>Experience</h2>
     <ul>
-      <li>Ag.Instructor at Shree Bir Balabhadra Model Sec. School, Thabang, Rolpa</li>
+      <li>Ag.Instructor at Thabang, Rolpa</li>
       <li>Grain Legumes Research Program – 3 months</li>
       <li>PMAMP, PIU, Bajhang – 1 month</li>
-      <li>Center for Agriculture and Farmers Development – 2 months</li>
+      <li>CAFD – 2 months</li>
     </ul>
   </section>
 
   <section id="projects">
     <h2>Projects & Learn Krishi Official</h2>
-    <p>I run the YouTube channel <strong>Learn Krishi Official</strong>, creating documentary-style and informative videos about agriculture, climate change, crop management, and modern farming.</p>
-    <p>📺 <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank">Visit Learn Krishi Official</a><br>
-    📧 <a href="mailto:learnkrishiofficial@gmail.com">learnkrishiofficial@gmail.com</a></p>
-
-    <div class="youtube">
-      <iframe src="https://www.youtube.com/embed/W0EsodTqgpI" title="Learn Krishi Official"></iframe>
-    </div>
+    <p>Visit my YouTube channel for agriculture-related lessons, documentaries, and field-based tutorials.</p>
+    <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank">Visit on YouTube</a>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 Email: <a href="mailto:harichandrasingh222@gmail.com">harichandrasingh222@gmail.com</a></p>
-    <p>📞 Phone: +977 9840213344</p>
-    <p>🏠 Address: Khaptadchhanna Rural Municipality–02, Bajhang, Nepal</p>
+  <!-- 🔥 FULL ONLINE CLASSES PAGE MERGED HERE -->
+  <section id="classesContainer">
+    <h2>Online Classes</h2>
 
-    <div class="social-icons">
-      <a href="https://facebook.com/harishsin9h" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-      <a href="https://instagram.com/learnkrishiofficial" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-      <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-      <a href="https://tiktok.com/@harish_singh_1" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+    <div class="class-grid">
+      <div class="class-card">
+        <img src="https://i.imgur.com/8Km9tLL.jpg">
+        <h3>Climate-resilient Farming</h3>
+        <p>Low‑cost, practical climate adaptation techniques for farmers.</p>
+        <a class="btn btn-primary" href="https://www.youtube.com/watch?v=W0EsodTqgpI" target="_blank">Watch</a>
+      </div>
+
+      <div class="class-card">
+        <img src="https://i.imgur.com/1JQ9Z0z.jpg">
+        <h3>Rice Production Best Practices</h3>
+        <p>Nursery, transplanting, irrigation, and modern management.</p>
+        <a class="btn btn-primary" href="#" target="_blank">Watch</a>
+      </div>
+
+      <div class="class-card">
+        <img src="https://i.imgur.com/9b0Xb3K.jpg">
+        <h3>Soil Health & Nutrients</h3>
+        <p>Soil testing, organic matter management, and balanced fertilization.</p>
+        <a class="btn btn-primary" href="#" target="_blank">Watch</a>
+      </div>
+
+      <div class="class-card">
+        <img src="https://i.imgur.com/4AiXzf8.jpg">
+        <h3>Organic Pest Management</h3>
+        <p>Learn biological, cultural, and mechanical pest control methods.</p>
+        <a class="btn btn-primary" href="#" target="_blank">Watch</a>
+      </div>
+
+      <div class="class-card">
+        <img src="https://i.imgur.com/7GB7Q1P.jpg">
+        <h3>Farm Business & Marketing</h3>
+        <p>Entrepreneurship, value addition, recordkeeping, market strategy.</p>
+        <a class="btn btn-primary" href="#" target="_blank">Watch</a>
+      </div>
     </div>
-  </section>
 
-  <footer>© 2025 Harichandra Singh | Designed with ❤️ in Nepal</footer>
-
-    <!-- External PDF & Resource Links Section -->
-    <section style="margin-top:40px;">
-      <h2 style="color:#2e7d32;border-bottom:2px solid #c8e6c9;display:inline-block;">Additional Resources</h2>
-      <ul style="margin-top:15px;line-height:1.8;font-size:1rem;">
+    <!-- 📘 External PDF Resources -->
+    <div class="resources">
+      <h2 style="margin-top:40px;">Additional Resources</h2>
+      <ul>
         <li><a href="https://www.fao.org/3/i1683e/i1683e.pdf" target="_blank">FAO Climate Smart Agriculture PDF</a></li>
         <li><a href="https://www.agrico.gov.np/storage/resource/Soil_Health_Guide.pdf" target="_blank">Soil Health Management Guide – Nepal</a></li>
         <li><a href="https://icta.org.np/files/document/crop-production-guide.pdf" target="_blank">Crop Production Handbook (Nepal Govt.)</a></li>
         <li><a href="https://www.fao.org/3/ca6048en/ca6048en.pdf" target="_blank">Organic Farming Manual – FAO</a></li>
       </ul>
-    </section>
+    </div>
+    <!-- 📤 User PDF Upload System -->
+  <section id="uploadSection" style="margin-top:40px;">
+    <h2>Upload Your Own PDF Notes</h2>
+    <p>You can upload your own agriculture-related PDF notes here. They will appear below for quick access.</p>
 
-</
+    <input type="file" id="pdfUpload" accept="application/pdf" style="margin-top:15px; padding:8px;">
+
+    <ul id="uploadedList" style="margin-top:20px; line-height:1.8; font-size:1rem;"></ul>
+  </section>
+
+  <script>
+    const uploadInput = document.getElementById('pdfUpload');
+    const list = document.getElementById('uploadedList');
+
+    uploadInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (!file) return;
+
+      const url = URL.createObjectURL(file);
+      const li = document.createElement('li');
+
+      li.innerHTML = `<a href="${url}" target="_blank">${file.name}</a>`;
+      list.appendChild(li);
+    });
+  </script>
+
+<footer>© 2025 Harichandra Singh | Designed with ❤️ in Nepal</footer>
+
+</body>
+</html>
