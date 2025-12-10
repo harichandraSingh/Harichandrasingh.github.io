@@ -7,8 +7,8 @@
   <title>Harichandra (Harish) Singh | Agriculture Graduate | Official Personal Website</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Official personal website of Harichandra (Harish) Singh — Agriculture Graduate, Educator, Agronomy student, and creator of Learn Krishi Official. Explore educatio[...]">
-  <meta name="keywords" content="Harichandra Singh, Harish Singh, Agriculture Graduate Nepal, Learn Krishi Official, Agronomy Nepal, Agriculture Education Nepal, Online Agriculture Classes, Farmer Tra[...]">
+  <meta name="description" content="Official personal website of Harichandra (Harish) Singh — Agriculture Graduate, Educator, Agronomy student, and creator of Learn Krishi Official. Explore educatio[...]
+  <meta name="keywords" content="Harichandra Singh, Harish Singh, Agriculture Graduate Nepal, Learn Krishi Official, Agronomy Nepal, Agriculture Education Nepal, Online Agriculture Classes, Farmer Tra[...]
   <meta name="author" content="Harichandra Singh">
 
   <!-- Open Graph (Social Sharing) -->
@@ -52,8 +52,19 @@
     .flag-container { position:absolute; top:20px; right:20px; width:70px; /* animation disabled globally */ }
     @keyframes wave { 0%{transform:rotate(0);} 50%{transform:rotate(-3deg);} 100%{transform:rotate(0);} }
 
-    .greeting { margin-top:15px; display:inline-block; font-size:1.15rem; white-space:nowrap; /* animation disabled globally */ }
+    /* Marquee-like scrolling keyframes (used for greeting) */
     @keyframes scroll { 0%{transform:translateX(100%);} 100%{transform:translateX(-100%);} }
+
+    /* Greeting container and animated text:
+       - Global animations are disabled above, but this class-specific rule (with !important)
+         will override the universal disable because class selectors have higher specificity.
+       - prefers-reduced-motion is honored below.
+    */
+    .greeting { margin-top:15px; display:block; font-size:1.15rem; white-space:nowrap; overflow:hidden; position:relative; }
+    .greeting-text { display:inline-block; padding-left:100%; /* start off-screen to the right */ animation: scroll 12s linear infinite !important; }
+    @media (prefers-reduced-motion: reduce) {
+      .greeting-text { animation: none !important; padding-left:0; }
+    }
 
     /* Nepal time & BS date display */
     .nepal-time { margin-top:12px; font-size:0.98rem; opacity:0.95; }
@@ -108,7 +119,10 @@
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Flag_of_Nepal.svg" class="flag-container" alt="Flag of Nepal">
     <h1>Harichandra (Harish) Singh</h1>
-    <p class="greeting">Welcome to my official personal website — Agriculture • Education • Innovation</p>
+    <!-- Updated greeting: animated continuously (marquee-like) -->
+    <p class="greeting" aria-live="polite">
+      <span class="greeting-text">Welcome to my official personal website — Agriculture • Education • Innovation</span>
+    </p>
 
     <!-- Nepal local date & time (English and Nepali-localized) + accurate-ish B.S. date -->
     <div class="nepal-time" aria-live="polite" aria-atomic="true">
