@@ -7,8 +7,8 @@
   <title>Harichandra (Harish) Singh | Agriculture Graduate | Official Personal Website</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Official personal website of Harichandra (Harish) Singh — Agriculture Graduate, Educator, Agronomy student, and creator of Learn Krishi Official. Explore educational videos, course material, and contact information for online agriculture classes." />
-  <meta name="keywords" content="Harichandra Singh, Harish Singh, Agriculture Graduate Nepal, Learn Krishi Official, Agronomy Nepal, Agriculture Education Nepal, Online Agriculture Classes, Farmer Training, Soil Science, Plant Protection" />
+  <meta name="description" content="Official personal website of Harichandra (Harish) Singh — Agriculture Graduate, Educator, Agronomy student, and creator of Learn Krishi Official. Explore educatio[...]">
+  <meta name="keywords" content="Harichandra Singh, Harish Singh, Agriculture Graduate Nepal, Learn Krishi Official, Agronomy Nepal, Agriculture Education Nepal, Online Agriculture Classes, Farmer Tra[...]">
   <meta name="author" content="Harichandra Singh">
 
   <!-- Open Graph (Social Sharing) -->
@@ -31,18 +31,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
+    /* === ANIMATIONS OFF ===
+       Global override to disable all CSS animations and transitions as requested.
+       To restore animations, remove this block or replace with a prefers-reduced-motion media query.
+    */
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+
     * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
-    body { background:#eef9f0; color:#1a1a1a; line-height:1.7; scroll-behavior:smooth; }
+    /* Disabled smooth scrolling to turn off animated anchor navigation */
+    body { background:#eef9f0; color:#1a1a1a; line-height:1.7; scroll-behavior:auto; }
 
     /* HEADER */
     header { background:#2e7d32; color:white; text-align:center; padding:80px 20px; position:relative; }
     header h1 { font-size:2.8rem; font-weight:700; }
     header p { margin-top:12px; font-size:1.15rem; opacity:0.95; }
 
-    .flag-container { position:absolute; top:20px; right:20px; width:70px; animation:wave 2s infinite ease-in-out; }
+    .flag-container { position:absolute; top:20px; right:20px; width:70px; /* animation disabled globally */ }
     @keyframes wave { 0%{transform:rotate(0);} 50%{transform:rotate(-3deg);} 100%{transform:rotate(0);} }
 
-    .greeting { margin-top:15px; display:inline-block; font-size:1.15rem; white-space:nowrap; animation:scroll 13s linear infinite; }
+    .greeting { margin-top:15px; display:inline-block; font-size:1.15rem; white-space:nowrap; /* animation disabled globally */ }
     @keyframes scroll { 0%{transform:translateX(100%);} 100%{transform:translateX(-100%);} }
 
     /* Nepal time & BS date display */
@@ -55,7 +65,7 @@
     nav a { color:white; text-decoration:none; margin:0 18px; font-weight:500; padding:6px 12px; border-radius:8px; }
     nav a:hover { background:#2e7d32; }
 
-    .new-badge { background:#ff1744; color:white; font-size:0.65rem; padding:2px 6px; border-radius:6px; margin-left:5px; font-weight:bold; animation:pulse 1.4s infinite; }
+    .new-badge { background:#ff1744; color:white; font-size:0.65rem; padding:2px 6px; border-radius:6px; margin-left:5px; font-weight:bold; /* animation disabled */ }
     @keyframes pulse { 0%{transform:scale(1);} 50%{transform:scale(1.2);} 100%{transform:scale(1);} }
 
     /* SECTIONS */
@@ -69,8 +79,8 @@
 
     /* CARDS */
     .class-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:25px; }
-    .class-card { background:white; border-radius:14px; padding:18px; box-shadow:0 4px 12px rgba(0,0,0,0.1); transition:0.3s; }
-    .class-card:hover { transform:translateY(-6px); }
+    .class-card { background:white; border-radius:14px; padding:18px; box-shadow:0 4px 12px rgba(0,0,0,0.1); /* transition disabled */ }
+    .class-card:hover { /* transform disabled */ }
     .class-card img { width:100%; height:165px; object-fit:cover; border-radius:10px; }
     .class-card h3 { margin-top:12px; color:#2e7d32; }
 
@@ -78,8 +88,8 @@
     .btn-primary:hover { background:#1b5e20; }
 
     /* CONTACT */
-    .social-icons a { margin-right:12px; color:#2e7d32; transition:0.3s; }
-    .social-icons a:hover { color:#1b5e20; transform:scale(1.1); }
+    .social-icons a { margin-right:12px; color:#2e7d32; /* transition disabled */ }
+    .social-icons a:hover { color:#1b5e20; /* transform disabled */ }
 
     iframe { width:100%; max-width:600px; height:340px; border:none; border-radius:14px; }
 
@@ -149,7 +159,7 @@
 
   <section id="projects">
     <h2>Projects & Learn Krishi Official</h2>
-    <p>I produce practical education-focused agricultural content for YouTube viewers across Nepal. My videos cover climate change impacts, field crop management, soil health, pests, diseases, and eco-friendly practices.</p>
+    <p>I produce practical education-focused agricultural content for YouTube viewers across Nepal. My videos cover climate change impacts, field crop management, soil health, pests, diseases, and eco[...]
 
     <p>
       📺 <a href="https://www.youtube.com/@LearnKrishiOfficial" target="_blank" rel="noopener noreferrer">Visit Learn Krishi Official on YouTube</a><br>
@@ -250,7 +260,8 @@
       }
       window.addEventListener('scroll', toggleBackTop);
       backTop.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // instant scroll (animation disabled)
+        window.scrollTo({ top: 0, behavior: 'auto' });
       });
       // Initialize
       toggleBackTop();
