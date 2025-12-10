@@ -60,14 +60,14 @@
          will override the universal disable because class selectors have higher specificity.
        - prefers-reduced-motion is honored below.
     */
-    .greeting { margin-top:15px; display:block; font-size:1.15rem; white-space:nowrap; overflow:hidden; position:relative; }
-    .greeting-text { display:inline-block; padding-left:100%; /* start off-screen to the right */ animation: scroll 4s linear infinite !important; }
+    .greeting { margin-top:10px; display:block; font-size:3.15rem; white-space:nowrap; overflow:hidden; position:relative; }
+    .greeting-text { display:inline-block; padding-left:100%; animation: scroll 8s linear infinite !important; }
     @media (prefers-reduced-motion: reduce) {
       .greeting-text { animation: none !important; padding-left:0; }
     }
 
     /* Nepal time & BS date display */
-    .nepal-time { margin-top:12px; font-size:0.98rem; opacity:0.95; }
+    .nepal-time { margin-top:12px; font-size:1.98rem; opacity:0.95; }
     .nepal-time small { display:block; margin-top:6px; opacity:0.9; font-size:0.9rem; }
     .nepal-time .bs-date { font-weight:600; margin-top:6px; display:block; }
 
