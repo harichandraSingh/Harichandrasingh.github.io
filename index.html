@@ -33,11 +33,11 @@
   <style>
     /* === ANIMATIONS OFF ===
        Global override to disable all CSS animations and transitions as requested.
-       To restore animations, remove this block or replace with a prefers-reduced-motion media query.
+       To restore animations, remove this block or replace it with a prefers-reduced-motion media query.
     */
     *, *::before, *::after {
-      animation: none !important;
-      transition: none !important;
+      animation: none! important;
+      transition: none! important;
     }
 
     * { margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif; }
@@ -58,12 +58,12 @@
     /* Greeting container and animated text:
        - Global animations are disabled above, but this class-specific rule (with !important)
          will override the universal disable because class selectors have higher specificity.
-       - prefers-reduced-motion is honored below.
+       - prefers-reduced-motion is honoured below.
     */
     .greeting { margin-top:10px; display:block; font-size:3.15rem; white-space:nowrap; overflow:hidden; position:relative; }
-    .greeting-text { display:inline-block; padding-left:100%; animation: scroll 8s linear infinite !important; }
+    .greeting-text { display:inline-block; padding-left:100%; animation: scroll 2s linear infinite !important; }
     @media (prefers-reduced-motion: reduce) {
-      .greeting-text { animation: none !important; padding-left:0; }
+      .greeting-text { animation: none !important; padding-left:10; }
     }
 
     /* Nepal time & BS date display */
