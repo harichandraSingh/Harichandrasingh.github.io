@@ -4,11 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Harichandra Singh | Agriculture AI Platform</title>
 
-<meta name="description" content="Official website of Harichandra Singh. Agriculture AI tools, crop disease detection, fertilizer calculator, agriculture blog and student resources.">
+<meta name="description" content="Official website of Harichandra Singh providing agriculture AI tools, farmer resources, blog and education.">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -19,30 +19,33 @@ font-family:Poppins;
 margin:0;
 background:#eef9f0;
 color:#222;
+transition:0.3s;
 }
 
 .dark{
-background:#111;
+background:#121212;
 color:white;
 }
 
 header{
 background:#2e7d32;
 color:white;
-padding:40px;
 text-align:center;
+padding:50px 20px;
 }
 
 nav{
 background:#1b5e20;
 text-align:center;
-padding:10px;
+padding:12px;
+position:sticky;
+top:0;
 }
 
 nav a{
 color:white;
-text-decoration:none;
 margin:12px;
+text-decoration:none;
 font-weight:500;
 }
 
@@ -58,7 +61,7 @@ text-align:center;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:20px;
 }
 
@@ -66,18 +69,18 @@ gap:20px;
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
 .dark .card{
-background:#222;
+background:#1f1f1f;
 }
 
 button{
 background:#2e7d32;
-color:white;
 border:none;
-padding:10px 15px;
+padding:10px 16px;
+color:white;
 border-radius:6px;
 cursor:pointer;
 }
@@ -87,6 +90,34 @@ width:100%;
 padding:10px;
 margin-top:10px;
 margin-bottom:10px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+.profile{
+display:flex;
+gap:20px;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.profile img{
+width:160px;
+height:160px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid #2e7d32;
+}
+
+.blog-post{
+background:white;
+padding:15px;
+margin-top:10px;
+border-radius:8px;
+}
+
+.dark .blog-post{
+background:#1f1f1f;
 }
 
 footer{
@@ -107,9 +138,9 @@ margin-top:40px;
 
 <h1>Harichandra Singh</h1>
 
-<p>Agriculture Graduate | Educator | Learn Krishi Official</p>
+<p>Agriculture Graduate | Learn Krishi Official</p>
 
-<div id="time"></div>
+<div id="nepalTime"></div>
 
 <button onclick="toggleMode()">Dark Mode</button>
 
@@ -122,7 +153,7 @@ margin-top:40px;
 <a href="#tools">AI Tools</a>
 <a href="#chatbot">AI Chatbot</a>
 <a href="#blog">Blog</a>
-<a href="#notes">PDF Notes</a>
+<a href="#notes">Notes</a>
 <a href="#jobs">Jobs</a>
 <a href="#login">Farmers Login</a>
 <a href="#feedback">Feedback</a>
@@ -131,13 +162,12 @@ margin-top:40px;
 </nav>
 
 
+
 <section class="hero">
 
-<h2>Smart Agriculture Platform for Farmers and Students</h2>
+<h2>AI Powered Agriculture Knowledge Platform</h2>
 
-<p>
-Helping farmers with AI crop diagnosis, smart calculators and modern agriculture knowledge.
-</p>
+<p>Helping farmers and agriculture students with AI tools and practical knowledge.</p>
 
 </section>
 
@@ -147,19 +177,23 @@ Helping farmers with AI crop diagnosis, smart calculators and modern agriculture
 
 <h2>About Me</h2>
 
+<div class="profile">
+
+<img src="https://via.placeholder.com/160" alt="Admin Profile Picture">
+
+<div>
+
 <p>
-I am <b>Harichandra Singh</b>, an Agriculture Graduate from Nepal passionate about
-sustainable farming, agricultural research and farmer education.
-I create agriculture education content through my YouTube channel
-<b>Learn Krishi Official</b>.
+I am <b>Harichandra Singh</b>, an agriculture graduate from Nepal passionate about
+sustainable agriculture and farmer education.
 </p>
 
 <h3>Education</h3>
 
 <ul>
 
-<li>M.Sc Agriculture (Agronomy) – Running</li>
-<li>B.Sc (Hons.) Agriculture</li>
+<li>MSc Agriculture (Agronomy) – Running</li>
+<li>BSc Agriculture</li>
 <li>I.Sc Agriculture</li>
 
 </ul>
@@ -174,6 +208,10 @@ I create agriculture education content through my YouTube channel
 <li>Center for Agriculture and Farmers Development – 2 months</li>
 
 </ul>
+
+</div>
+
+</div>
 
 </section>
 
@@ -190,24 +228,25 @@ I create agriculture education content through my YouTube channel
 
 <h3>AI Crop Disease Detection</h3>
 
-<input type="file" id="imageUpload">
+<input type="file" id="cropImage">
 
-<button onclick="detectDisease()">Detect Disease</button>
+<button onclick="detectDisease()">Detect</button>
 
-<p id="result"></p>
+<p id="diseaseResult"></p>
 
 </div>
+
 
 
 <div class="card">
 
 <h3>Fertilizer Calculator</h3>
 
-<input type="number" id="area" placeholder="Enter area (ropani)">
+<input id="area" placeholder="Enter land area (ropani)">
 
-<button onclick="fertilizerCalculator()">Calculate</button>
+<button onclick="fertilizerCalc()">Calculate</button>
 
-<p id="fertilizerOutput"></p>
+<p id="fertResult"></p>
 
 </div>
 
@@ -236,14 +275,13 @@ I create agriculture education content through my YouTube channel
 
 <h2>Agriculture Blog</h2>
 
-<ul>
+<input id="blogTitle" placeholder="Blog title">
 
-<li>Climate Smart Agriculture</li>
-<li>Organic Farming Techniques</li>
-<li>Integrated Pest Management</li>
-<li>Soil Health Improvement</li>
+<textarea id="blogContent" placeholder="Write blog"></textarea>
 
-</ul>
+<button onclick="publishBlog()">Publish Blog</button>
+
+<div id="blogContainer"></div>
 
 </section>
 
@@ -299,7 +337,7 @@ I create agriculture education content through my YouTube channel
 
 <h2>Feedback</h2>
 
-<input placeholder="Your Name">
+<input placeholder="Name">
 
 <textarea placeholder="Write feedback"></textarea>
 
@@ -316,8 +354,6 @@ I create agriculture education content through my YouTube channel
 <p>Email: harichandrasingh222@gmail.com</p>
 
 <p>Phone: +977 9840213344</p>
-
-<p>Address: Khaptadchhanna Rural Municipality 02, Bajhang, Nepal</p>
 
 <p>YouTube: Learn Krishi Official</p>
 
@@ -336,19 +372,16 @@ I create agriculture education content through my YouTube channel
 <script>
 
 function toggleMode(){
-
 document.body.classList.toggle("dark")
-
 }
 
 
 
 function updateTime(){
 
-var now=new Date()
+let now=new Date()
 
-document.getElementById("time").innerHTML=
-
+document.getElementById("nepalTime").innerHTML=
 now.toLocaleString("en-US",{timeZone:"Asia/Kathmandu"})
 
 }
@@ -359,15 +392,13 @@ setInterval(updateTime,1000)
 
 function detectDisease(){
 
-document.getElementById("result").innerHTML=
-
-"AI analysing crop image..."
+document.getElementById("diseaseResult").innerHTML=
+"AI analysing image..."
 
 setTimeout(function(){
 
-document.getElementById("result").innerHTML=
-
-"Possible disease: Leaf Blight. Spray Mancozeb."
+document.getElementById("diseaseResult").innerHTML=
+"Possible disease detected: Leaf Blight. Suggested treatment: Mancozeb spray."
 
 },2000)
 
@@ -375,19 +406,16 @@ document.getElementById("result").innerHTML=
 
 
 
-function fertilizerCalculator(){
+function fertilizerCalc(){
 
-var area=document.getElementById("area").value
+let area=document.getElementById("area").value
 
-var urea=area*50
+let urea=area*50
+let dap=area*25
+let mop=area*20
 
-var dap=area*25
-
-var potash=area*20
-
-document.getElementById("fertilizerOutput").innerHTML=
-
-"Urea: "+urea+" kg | DAP: "+dap+" kg | MOP: "+potash+" kg"
+document.getElementById("fertResult").innerHTML=
+"Urea: "+urea+"kg | DAP: "+dap+"kg | MOP: "+mop+"kg"
 
 }
 
@@ -395,9 +423,9 @@ document.getElementById("fertilizerOutput").innerHTML=
 
 function askAI(){
 
-var q=document.getElementById("question").value
+let q=document.getElementById("question").value.toLowerCase()
 
-var ans=""
+let ans=""
 
 if(q.includes("rice"))
 
@@ -405,13 +433,28 @@ ans="Rice requires flooded field and nitrogen fertilizer."
 
 else if(q.includes("potato"))
 
-ans="Potato grows well in loose soil with balanced NPK."
+ans="Potato grows best in loose soil with balanced NPK fertilizer."
 
 else
 
-ans="Consult agriculture expert for detailed advice."
+ans="Please consult agriculture expert or extension office."
 
 document.getElementById("answer").innerHTML=ans
+
+}
+
+
+
+function publishBlog(){
+
+let title=document.getElementById("blogTitle").value
+let content=document.getElementById("blogContent").value
+
+let blogHTML=
+
+"<div class='blog-post'><h3>"+title+"</h3><p>"+content+"</p></div>"
+
+document.getElementById("blogContainer").innerHTML+=blogHTML
 
 }
 
